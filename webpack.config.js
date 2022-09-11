@@ -16,14 +16,19 @@ module.exports = {
             {
                 test: /\.css$/i,
                 use: ['style-loader', 'css-loader'],
+            },
+            {
+                test: /\.png$/i,
+                use: 'url-loader',
             }
+
         ],
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
     },
     devServer: {
-        static: path.join(__dirname, './dist'),
+        static: path.join(__dirname, './'),
         compress: true,
         port: 9000
     }
